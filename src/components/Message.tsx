@@ -17,9 +17,11 @@ export const Message: React.FC<MessageProps> = ({ message, currentUserId }) => {
     };
 
     if (isSystemMessage) {
+        // Show nickname for system messages instead of ℹ️
+        const nickname = message.userNickname || 'Someone';
         return (
             <div className="message-system">
-                <span className="system-icon">ℹ️</span>
+                <span className="system-nickname">{nickname}</span>
                 <span className="system-text">{message.body}</span>
             </div>
         );

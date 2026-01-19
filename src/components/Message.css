@@ -120,8 +120,10 @@
     animation: messageSlideIn 0.3s ease;
 }
 
-.system-icon {
-    font-size: 14px;
+.system-nickname {
+    font-size: 13px;
+    font-weight: 600;
+    color: #667eea;
 }
 
 .system-text {
