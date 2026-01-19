@@ -19,10 +19,12 @@ export const Message: React.FC<MessageProps> = ({ message, currentUserId }) => {
     if (isSystemMessage) {
         // Show nickname for system messages instead of ℹ️
         const nickname = message.userNickname || 'Someone';
+        // Remove ℹ️ from the body if server includes it
+        const bodyText = message.body.replace(/^ℹ️\s*/, '').trim();
         return (
             <div className="message-system">
                 <span className="system-nickname">{nickname}</span>
-                <span className="system-text">{message.body}</span>
+                <span className="system-text">{bodyText}</span>
             </div>
         );
     }
